@@ -26,6 +26,13 @@ package com.masterdevskills.cha1.ext1;
  * @author A N M Bazlur Rahman @bazlur_rahman
  * @since 04 August 2020
  */
+
+@FunctionalInterface
+interface Executable{
+	void execute();
+}
+
+
 public class LambdaExpression2 {
 
 	/**
@@ -35,13 +42,21 @@ public class LambdaExpression2 {
 	 * use this functional interface as argument of the following method and log
 	 * the time it takes to execute the method
 	 */
+
+
+	private void execute(Executable executable){
+		executable.execute();
+	}
+
 	public void executionTime() {
-		//TODO add your code here;
+		Executable executable = ()-> System.out.println("Hello");
+		execute(executable);
+
 	}
 
 	/* TODO: use the above of method here
 	 */
 	public void run() {
-		//executionTime();
+		executionTime();
 	}
 }
