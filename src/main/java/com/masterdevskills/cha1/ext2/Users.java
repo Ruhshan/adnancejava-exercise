@@ -43,7 +43,8 @@ public class Users {
 	 * @see User#setStatus(Status)
 	 */
 	public static void activatedAll(List<User> users, Status status) {
-		throw new RuntimeException("NotImplemented");
+
+		users.forEach(user -> user.setStatus(status));
 	}
 
 	/**
@@ -58,6 +59,10 @@ public class Users {
 
 	public static String makeStringOfAllUsernames(List<User> users) {
 
-		throw new RuntimeException("NotImplemented");
+		StringJoiner stringJoiner = new StringJoiner(",");
+
+		users.forEach(user->stringJoiner.add(user.toString()));
+
+		return stringJoiner.toString();
 	}
 }
