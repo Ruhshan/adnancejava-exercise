@@ -27,4 +27,8 @@ public interface Deck {
 
     Map<Integer, Deck> deal(int players, int numberOfCards)
             throws IllegalArgumentException;
+
+    default void endGame(){
+        System.out.println("End the game");
+    }
 }
